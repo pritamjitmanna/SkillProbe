@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+
+    <style>
+        #sidebar {
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #f1f1f1;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+            
+        }
+
+        /* Sidebar links */
+        #sidebar button {
+            display: block;
+            color: black;
+            padding: 16px;
+            text-decoration: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        /* Active/current link */
+        #sidebar button.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        /* Links on mouse-over */
+        #sidebar button:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+
+        /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+        div.content {
+            margin-left: 200px;
+            padding: 1px 16px;
+            height: 1000px;
+        }
+
+        /* On screens that are less than 700px wide, make the sidebar into a topbar */
+        @media screen and (max-width: 700px) {
+            #sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            #sidebar button {
+                float: left;
+            }
+
+            div.content {
+                margin-left: 0;
+            }
+        }
+
+        /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+        @media screen and (max-width: 400px) {
+            #sidebar button {
+                text-align: center;
+                float: none;
+            }
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <nav class="navbar bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand"></a>
+            <div class="d-flex" role="search">
+                <div id="timeLeft" class="btn btn-outline-success me-2">15 mins</div>
+                <button class="btn btn-outline-success" type="submit">Submit Test</button>
+            </div>
+        </div>
+    </nav>
+    <!-- The sidebar -->
+    <div id="sidebar">
+        <button class="active" onclick="handleClick(event,this)">MCQ</button>
+        <button onclick="handleClick(event,this)">Coding</button>
+    </div>
+
+    <div id="mcqPage">
+        {% include 'Candidate/challenges/mcq_page.html' %}
+    </div>
+    <div id="codingPage" style="display: none;">
+        {% include 'Candidate/challenges/coding_page.html' %}
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+        <script>
+
+
+
+        </script>
+</body>
+
+</html>

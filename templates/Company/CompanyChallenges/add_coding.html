@@ -1,0 +1,103 @@
+{% extends 'Company/CompanyChallenges/create_challenge_basic.html' %}
+
+
+{% block breadcrumb %}
+
+<li class="breadcrumb-item active" aria-current="page">Coding</li>
+
+{% endblock %}
+
+{% block sidebar %}
+<div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 380px;">
+    <div class="list-group list-group-flush border-bottom scrollarea">
+        <button class="list-group-item list-group-item-action active py-3 lh-sm" aria-current="true" onclick="handleClick(event,this)" name="qdetails">
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <strong class="mb-1">Step 1</strong>
+            </div>
+            <div class="col-10 mb-1 small">Question Details</div>
+        </button>
+        <button class="list-group-item list-group-item-action py-3 lh-sm" onclick="handleClick(event,this)" name="qlanguages">
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <strong class="mb-1">Step 2</strong>
+            </div>
+            <div class="col-10 mb-1 small">Languages</div>
+        </button>
+        <button class="list-group-item list-group-item-action py-3 lh-sm" onclick="handleClick(event,this)" name="qtestcases">
+            <div class="d-flex w-100 align-items-center justify-content-between">
+                <strong class="mb-1">Step 3</strong>
+            </div>
+            <div class="col-10 mb-1 small">Test Cases</div>
+        </button>
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block challengebody %}
+
+<div id="qdetails">
+    {% include 'Company/CompanyChallenges/coding_question_description.html' %}
+</div>
+<div id="qlanguages" style="display: none;">
+    {% include 'Company/CompanyChallenges/coding_languages.html' %}
+</div>
+<div id="qtestcases" style="display: none;">
+    {% include 'Company/CompanyChallenges/coding_testcases.html' %}
+</div>
+
+
+{% endblock %}
+
+
+{% block js %}
+
+<script>
+
+    let detailsQ=document.getElementById('qdetails')
+    let languagesQ=document.getElementById('qlanguages')
+    let testcasesQ=document.getElementById('qtestcases')
+    let detailsB=document.querySelector('button[name=qdetails]')
+    let languagesB=document.querySelector('button[name=qlanguages]')
+    let testcasesB=document.querySelector('button[name=qtestcases]')
+
+    function active(element){
+        detailsB.classList.remove('active')
+        languagesB.classList.remove('active')
+        testcasesB.classList.remove('active')
+        element.classList.add('active')
+    }
+
+    function block_none(block,none1,none2){
+        block.style.display='block'
+        none1.style.display='none'
+        none2.style.display='none'
+    }
+
+
+var handleClick=(e,element)=>{
+
+    e.preventDefault()
+
+    if(element.name=='qdetails'){
+        block_none(detailsQ,languagesQ,testcasesQ)
+        active(detailsB)
+    }
+    else if(element.name=='qlanguages'){
+        block_none(languagesQ,detailsQ,testcasesQ)
+        active(languagesB)
+    }
+    else{
+        block_none(testcasesQ,detailsQ,languagesQ)
+        active(testcasesB)
+    }
+
+
+}
+
+
+
+</script>
+
+{% endblock %}

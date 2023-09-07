@@ -1,0 +1,64 @@
+{% extends 'Company/basic.html' %}
+
+
+{% block body %}
+
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb" class="navbar-brand">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page"><a href="{% url 'PageChallenge' %}">Contest
+                        Page</a></li>
+                {% block breadcrumb %}
+                {% endblock %}
+            </ol>
+        </nav>
+        <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#questionType">Add
+            Question</button>
+    </div>
+</nav>
+
+<div class="d-flex" style="height: 100%;">
+
+    {% block sidebar %}
+
+    {% endblock %}
+
+    <div class="container" id="Questions">
+
+        {% block challengebody %}
+
+        {% endblock %}
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="questionType" tabindex="-1" aria-labelledby="questionTypeLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="questionTypeLabel">Select Your Question type</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex">
+                    <a href="{% url 'AddMCQ' %}" class="card me-2" style="width: 18rem; text-decoration: none;"
+                        id="selectMCQ">
+                        <div class="card-body">
+                            <h5 class="card-title">Multiple Choice Question</h5>
+                            <p class="card-text">Add Question with one or more correct answers</p>
+                        </div>
+                    </a>
+                    <a href="{% url 'AddCoding' %}" class="card" style="width: 18rem; text-decoration: none;"
+                        id="selectCoding">
+                        <div class="card-body">
+                            <h5 class="card-title">Coding Question</h5>
+                            <p class="card-text">Add Programming Questions supporting various languages</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

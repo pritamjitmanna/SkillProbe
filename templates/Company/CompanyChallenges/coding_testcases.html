@@ -1,0 +1,69 @@
+<div class="container">
+    <h3>Problem TestCases</h3>
+
+    <form>
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupFile01">Upload Solution</label>
+            <input type="file" class="form-control" id="inputGroupFile01">
+        </div>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#addTestCases">
+            Add Testcases
+        </button>
+    </form>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="addTestCases" tabindex="-1" aria-labelledby="addTestCasesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addTestCasesLabel">Add TestCase</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        
+                        <div class="col-md-6">
+                            <label for="inputTestCaseName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="inputTestCaseName" name="inputTestCaseName">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputTestCaseDifficulty" class="form-label">Difficulty</label>
+                            <select id="inputTestCaseDifficulty" class="form-select" name="inputTestCaseDifficulty">
+                                <option selected>Easy</option>
+                                <option>Medium</option>
+                                <option>Hard</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputTestCaseScore" class="form-label">Score</label>
+                            <input type="text" class="form-control" id="inputTestCaseScore" name="inputTestCaseScore">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="inputTestCase" class="form-label">TestCase</label>
+                            <textarea class="form-control" id="inputTestCase" rows="7" name="inputTestCase"></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="TestCaseOutput" class="form-label">Output</label>
+                            <textarea class="form-control" id="TestCaseOutput" rows="7" name="TestCaseOutput"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="isSample" name="isSample">
+                                <label class="form-check-label" for="isSample">Use as Sample Test Case</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

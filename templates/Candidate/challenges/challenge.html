@@ -1,0 +1,173 @@
+{% extends 'Candidate/basic.html' %}
+
+{% block css %}
+
+<style>
+    .time-block {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .py-2 {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
+
+    .px-4 {
+        padding-right: 3.5rem !important;
+        padding-left: 3.5rem !important;
+    }
+</style>
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+    <div class="col-lg-6 px-0">
+        <h1 class="display-4 fst-italic">HACKATHON</h1>
+        <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently
+            about what’s most interesting in this post’s contents.</p>
+    </div>
+
+    <article class="blog-post">
+        <div class="time-block">
+            <div>
+                <h5 class="link-body-emphasis mb-1">Starts On</h5>
+                <p>Aug 14, 2023, 09:30 PM IST</p>
+            </div>
+
+            <div>
+                <h5 class="ink-body-emphasis mb-1">Ends On</h5>
+                <p>Aug 14, 2023, 09:30 PM IST</p>
+            </div>
+        </div>
+    </article>
+</div>
+
+<div class="container">
+    <div class="row g-5">
+        <div class="col-md-8">
+
+
+
+            <article class="blog-post">
+                <h3>Requirements</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptatum harum eum at ducimus
+                    veniam rem, autem officia corporis provident aliquam reiciendis reprehenderit nemo illum vitae
+                    cupiditate architecto exercitationem eos doloribus corrupti. Et, aliquid! Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Voluptates eum veritatis incidunt soluta quas iure blanditiis dolore
+                    neque reiciendis vel nobis voluptatibus maxime, animi ad officiis consequatur sint id ratione quo.
+                    Aliquam, modi commodi?</p>
+            </article>
+            <article class="blog-post">
+                <h3>Requirements</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptatum harum eum at ducimus
+                    veniam rem, autem officia corporis provident aliquam reiciendis reprehenderit nemo illum vitae
+                    cupiditate architecto exercitationem eos doloribus corrupti. Et, aliquid! Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Voluptates eum veritatis incidunt soluta quas iure blanditiis dolore
+                    neque reiciendis vel nobis voluptatibus maxime, animi ad officiis consequatur sint id ratione quo.
+                    Aliquam, modi commodi?</p>
+            </article>
+            <article class="blog-post">
+                <h3>Requirements</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptatum harum eum at ducimus
+                    veniam rem, autem officia corporis provident aliquam reiciendis reprehenderit nemo illum vitae
+                    cupiditate architecto exercitationem eos doloribus corrupti. Et, aliquid! Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Voluptates eum veritatis incidunt soluta quas iure blanditiis dolore
+                    neque reiciendis vel nobis voluptatibus maxime, animi ad officiis consequatur sint id ratione quo.
+                    Aliquam, modi commodi?</p>
+            </article>
+            <article class="blog-post">
+                <h3>Requirements</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptatum harum eum at ducimus
+                    veniam rem, autem officia corporis provident aliquam reiciendis reprehenderit nemo illum vitae
+                    cupiditate architecto exercitationem eos doloribus corrupti. Et, aliquid! Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Voluptates eum veritatis incidunt soluta quas iure blanditiis dolore
+                    neque reiciendis vel nobis voluptatibus maxime, animi ad officiis consequatur sint id ratione quo.
+                    Aliquam, modi commodi?</p>
+            </article>
+
+
+
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem;">
+                <button class=" btn btn-primary px-4 py-2 mb-3 rounded" type="button" data-bs-toggle="modal"
+                    data-bs-target="#challengeRegister">
+                    Register
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Challenge Register Modal -->
+    <div class="modal fade" id="challengeRegister" tabindex="-1" aria-labelledby="challengeRegisterLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="challengeRegisterLabel">Enter Your Details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-12">
+                            <label for="fullname" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="fullname">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="contact" class="form-label">Contact</label>
+                            <input type="number" class="form-control" id="contact">
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-6">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="state" class="form-label">State</label>
+                            <input type="text" class="form-control" id="state">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="country" class="form-label">Country</label>
+                            <input type="text" class="form-control" id="country">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="job_title" class="form-label">Job Title (if not currently employed please select
+                                NA)</label>
+                            <input type="text" class="form-control" id="job_title">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="years_exp" class="form-label">Years of experience (if not currently employed
+                                please select NA)</label>
+                            <input type="text" class="form-control" id="years_exp">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="university" class="form-label">Name of University (attended or
+                                attending)</label>
+                            <input type="text" class="form-control" id="university">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="cgpa" class="form-label">CGPA</label>
+                            <input type="number" class="form-control" id="cgpa">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label" for="resume">Resume</label>
+                            <input type="file" class="form-control" id="resume">
+                        </div>
+                        <div class="col-12">
+                            <a type="submit" class="btn btn-primary" href="{% url 'BeforeTime' %}">Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

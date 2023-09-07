@@ -1,0 +1,74 @@
+{% extends 'Company/basic.html' %}
+
+{% block body %}
+
+<div class="container mt-2">
+    <h1>Create Challenge</h1>
+
+    <form class="row g-3">
+        <div class="col-md-6">
+            <label for="challengeName" class="form-label">Challenge Name</label>
+            <input type="challengeName" class="form-control" id="challengeName">
+        </div>
+        <div class="w-100"></div>
+        <div class="col-md-12">
+            <label for="startDateTime" class="form-label">Start Time</label>
+            <div id="startDateTime" class="row">
+                <div class="col-md-4">
+                    <input type="date" class="form-control" id="startDate">
+                </div>
+                at
+                <div class="col-md-4">
+                    <input type="time" class="form-control" id="startDate">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label for="endDateTime" class="form-label">Start Time</label>
+            <div id="endDateTime" class="row">
+                <div class="col-md-4">
+                    <input type="date" class="form-control" id="endDate">
+                </div>
+                at
+                <div class="col-md-4">
+                    <input type="time" class="form-control" id="endDate">
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="loginWindowCheck">
+                <label class="form-check-label" for="loginWindowCheck">
+                    Check for Login Window
+                </label>
+            </div>
+        </div>
+        <div class="col-md-6" id="toLoginWIndow" style="display: none;">
+            <label for="loginWindow" class="form-label">Login Window(Max of 30 mins)</label>
+            <input type="number" class="form-control" id="loginWindow" max="30">
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    </form>
+</div>
+
+
+
+{% endblock %}
+
+{% block js %}
+
+<script>
+
+    document.getElementById('loginWindowCheck').addEventListener('click',(e)=>{
+        let display=document.getElementById('toLoginWIndow').style.display
+        if(display=='block')document.getElementById('toLoginWIndow').style.display='none'
+        else document.getElementById('toLoginWIndow').style.display='block'
+    })
+
+</script>
+
+
+{% endblock %}
