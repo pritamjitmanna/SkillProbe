@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'Backend',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Candidate',
     'Company',
+    
+    'HomeSite',
+
+    'rest_framework'
 ]
+AUTH_USER_MODEL='Backend.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -69,6 +75,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'skillprobe.wsgi.application'
 

@@ -23,7 +23,8 @@ is_flag=True
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('',views.index,name='Home'),
+    path('',include('HomeSite.urls'),name='Home'),
     path('candidate/',include("Candidate.urls"),name='base_url'),
-    path('company/',include("Company.urls"),name='base_url')
+    path('company/',include("Company.urls"),name='base_url'),
+    # path('api',include('Backend.urls'),name="api_urls")
 ]
